@@ -22,12 +22,15 @@ jobs:
       - run: |
           npm install -D @capacitor/cli @capacitor/core @capacitor/ios typescript
           npx cap add ios
-          echo '${{ secrets.GOOGLE_CLOUD_AUTH }}' >> gc_keys.json
-          fastlane beta
         working-directory: traccar-web
         env:
           APP_ID: ${{ vars.APP_ID }}
           APP_NAME: ${{ vars.APP_NAME }}
+      - run: |
+          echo '${{ secrets.GOOGLE_CLOUD_AUTH }}' >> gc_keys.json
+          fastlane beta
+        working-directory: traccar-web/ios/App
+        env:
           APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APPSTORE_API_KEY }}
           APP_IDENTIFIER: ${{ vars.APP_IDENTIFIER }}
           TEAM_ID: ${{ vars.TEAM_ID }}
