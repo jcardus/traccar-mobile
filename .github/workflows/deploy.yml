@@ -29,3 +29,4 @@ jobs:
           APP_ID: ${{ vars.APP_ID }}
           APP_NAME: ${{ vars.APP_NAME }}
           APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APPSTORE_API_KEY }}
+          APP_IDENTIFIER: ${{ vars.APP_IDENTIFIER }}
