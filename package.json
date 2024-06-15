@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jcardus/traccar-mobile/issues"
   },
-  "homepage": "https://github.com/jcardus/traccar-mobile#readme"
+  "homepage": "https://github.com/jcardus/traccar-mobile#readme",
+  "devDependencies": {
+    "wrangler": "^3.60.3"
+  }
 }
