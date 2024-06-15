@@ -18,7 +18,7 @@ jobs:
         working-directory: traccar-web
       - run: |
           cp -v capacitor.* traccar-web
-          mv fastlane traccar-web
+          mv -v fastlane traccar-web
       - run: |
           npm install -D @capacitor/cli @capacitor/core @capacitor/ios typescript
           npx cap add ios
@@ -32,3 +32,4 @@ jobs:
           APP_IDENTIFIER: ${{ vars.APP_IDENTIFIER }}
           TEAM_ID: ${{ vars.TEAM_ID }}
           APPLE_ID: ${{ vars.APPLE_ID }}
+          FL_PROVISIONING_PROFILE_SPECIFIER: ${{ vars.FL_PROVISIONING_PROFILE_SPECIFIER }}
