@@ -1,0 +1,20 @@
+{
+  "name": "traccar-mobile",
+  "version": "1.0.0",
+  "description": "traccar manager",
+  "main": "index.js",
+  "scripts": {
+    "build": "./build.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcardus/traccar-mobile.git"
+  },
+  "author": "jcardus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcardus/traccar-mobile/issues"
+  },
+  "homepage": "https://github.com/jcardus/traccar-mobile#readme"
+}
