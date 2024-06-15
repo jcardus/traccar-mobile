@@ -18,10 +18,10 @@ jobs:
         working-directory: traccar-web
       - run: |
           cp -v capacitor.* traccar-web
-          mv -v fastlane traccar-web
       - run: |
           npm install -D @capacitor/cli @capacitor/core @capacitor/ios typescript
           npx cap add ios
+          mv -v ../fastlane ios/App
         working-directory: traccar-web
         env:
           APP_ID: ${{ vars.APP_ID }}
