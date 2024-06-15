@@ -1,0 +1,28 @@
+name: deploy to appstore
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  build_ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: git clone --depth 1 https://github.com/traccar/traccar-web
+      - run: npm ci
+        working-directory: traccar-web
+      - run: |
+          cp -v capacitor.* fastlane traccar-web
+          mv fastlane traccar-web
+      - run: |
+          npm install -D @capacitor/cli @capacitor/core @capacitor/ios @capacitor/android typescript
+          npx cap add ios
+          fastlane beta
+        working-directory: traccar-web
+        env:
+          APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APPSTORE_API_KEY }}
