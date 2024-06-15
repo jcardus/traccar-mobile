@@ -14,11 +14,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
       - run: git clone --depth 1 https://github.com/traccar/traccar-web
-      - run: npm ci
-        working-directory: traccar-web
       - run: |
-          cp -v capacitor.* traccar-web
-      - run: |
+          cp -v ../capacitor.* traccar-web
           npm install -D @capacitor/cli @capacitor/core @capacitor/ios typescript
           npx cap add ios
           mv -v ../fastlane ios/App
