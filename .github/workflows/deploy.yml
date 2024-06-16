@@ -18,7 +18,7 @@ jobs:
           cp -v ../capacitor.* .
           cp -v ../capacitor.js src
           {
-            echo "import 'capacitor.js';"
+            echo "import './capacitor.js';"
             cat src/index.jsx
           } > temp && mv temp src/index.jsx
           npm install -D @capacitor/cli @capacitor/core @capacitor/ios typescript
