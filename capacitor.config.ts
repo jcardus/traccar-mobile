@@ -7,6 +7,11 @@ const config: CapacitorConfig = {
     webDir: 'build',
     ios: {
         contentInset: 'always'
+    },
+    plugins: {
+        CapacitorHttp: {
+            enabled: true
+        }
     }
 };
 
