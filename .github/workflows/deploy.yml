@@ -13,15 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - run: git clone --depth 1 https://github.com/traccar/traccar-web
+      - run: npm run build
       - run: |
           npm install -D @capacitor/cli @capacitor/core @capacitor/ios typescript
-          cp -v ../capacitor.* .
-          cp -vr ../src .
-          {
-            echo "import './capacitor.js';"
-            cat src/index.jsx
-          } > temp && mv temp src/index.jsx
           npm run build
           npx cap add ios
           mv -v ../fastlane ios/App
