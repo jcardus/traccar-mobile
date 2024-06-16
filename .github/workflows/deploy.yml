@@ -28,9 +28,9 @@ jobs:
           fastlane beta
         working-directory: traccar-web/ios/App
         env:
-          APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APPSTORE_API_KEY }}
-          APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY_ID }}
-          APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_KEY: ${{ vars.APP_STORE_CONNECT_API_KEY_KEY }}
+          APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ vars.APP_STORE_CONNECT_API_KEY_KEY_ID }}
+          APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ var.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
           APP_IDENTIFIER: ${{ vars.APP_IDENTIFIER }}
           TEAM_ID: ${{ vars.TEAM_ID }}
           APPLE_ID: ${{ vars.APPLE_ID }}
