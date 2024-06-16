@@ -16,6 +16,11 @@ jobs:
       - run: git clone --depth 1 https://github.com/traccar/traccar-web
       - run: |
           cp -v ../capacitor.* .
+          cp -v ../capacitor.js src
+          {
+            echo "import 'capacitor.js';"
+            cat src/index.jsx
+          } > temp && mv temp src/index.jsx
           npm install -D @capacitor/cli @capacitor/core @capacitor/ios typescript
           npm run build
           npx cap add ios
