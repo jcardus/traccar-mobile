@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "./build.sh",
+    "prebuild-ios": "./build.sh",
+    "build-ios": "./build-ios.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
