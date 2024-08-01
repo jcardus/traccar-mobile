@@ -13,14 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - run: npm run build
-      - run: |
-          npm install -D @capacitor/cli @capacitor/core @capacitor/ios typescript
-          npx capacitor-assets generate
-          npm run build
-          npx cap add ios
-          mv -v ../fastlane ios/App
-        working-directory: traccar-web
+      - run: npm run build-ios
         env:
           APP_ID: ${{ vars.APP_ID }}
           APP_NAME: ${{ vars.APP_NAME }}
